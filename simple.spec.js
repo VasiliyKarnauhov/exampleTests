@@ -23,6 +23,9 @@ test('Регистрация', async ({ page }) => {
     await page.getByRole('button', { name: 'Sign up' }).click();  // Кликаем кнопку "Sign up" для завершения регистрации
     // Проверяем, что на странице появился текст "PRODUCT STORE", чтобы убедиться, что регистрация прошла успешно
     await expect(page.locator('#nava')).toContainText('PRODUCT STORE'); 
+
+    console.log(USERNAME); // Выводим случайное имя пользователя
+    console.log(PASSWORD); // Выводим случайный пароль
 });
 
 // Тест на авторизацию пользователя
@@ -41,4 +44,7 @@ test('Авторизация', async ({ page }) => {
 
     // Проверяем, что на странице появился элемент с текстом "About us", что означает успешный вход
     await expect(page.locator('#navbarExample')).toContainText('About us'); 
+
+    console.log(USERNAME); // Выводим случайное имя пользователя
+    console.log(PASSWORD); // Выводим случайный пароль
 });
